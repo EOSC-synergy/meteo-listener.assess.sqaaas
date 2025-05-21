@@ -1,0 +1,1030 @@
+{
+    "meta": {
+        "version": "3.5.0",
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/meteo-listener.assess.sqaaas/main/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/meteo-listener.assess.sqaaas/main/.report/assessment_output.json",
+        "timestamp": 1747831119.2675369
+    },
+    "repository": [
+        {
+            "url": "https://gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener",
+            "name": "dtgeo_geo3bcn/dtc-v2/meteo-listener",
+            "tag": "main",
+            "commit_id": "5cba3bcc8fc95821d0b3fd6ffcd9ba4cba0eff4e",
+            "is_main_repo": true,
+            "badge_status": "no_badge"
+        }
+    ],
+    "report": {
+        "QC.Acc": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Acc01": {
+                    "description": "Is the source code managed with a Version Control System?",
+                    "requirement_level": "MUST",
+                    "hint": "The source code shall be managed with Git and remain publicly available for this criterion to be successful. Please check <a href=\"https://git-scm.com/book/es/v2\" target=\"_blank\">Pro Git</a> docs about how to get started using Git tool. Guidelines provided by the most popular social coding platforms (<a href=\"https://docs.github.com/get-started\" target=\"_blank\">GitHub</a>, <a href=\"https://about.gitlab.com/get-started/\" target=\"_blank\">GitLab</a>) are also a good starting point",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code uses Git for version control",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": "scm",
+                                "version": "2.34.1",
+                                "docker": {
+                                    "image": "bitnami/git:2.34.1",
+                                    "reviewed": "2021-12-30"
+                                },
+                                "ci": {
+                                    "name": "QC.Acc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/34/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Doc": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 4431}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": [{\"file_name\": \"CONTRIBUTING.md\", \"size\": 1877}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 4431
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": [
+                                    {
+                                        "file_name": "CONTRIBUTING.md",
+                                        "size": 1877
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 4431}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": [{\"file_name\": \"CONTRIBUTING.md\", \"size\": 1877}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 4431
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": [
+                                    {
+                                        "file_name": "CONTRIBUTING.md",
+                                        "size": 1877
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A CONTRIBUTING file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 4431}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": [{\"file_name\": \"CONTRIBUTING.md\", \"size\": 1877}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 4431
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": [
+                                    {
+                                        "file_name": "CONTRIBUTING.md",
+                                        "size": 1877
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc01.1": {
+                    "description": "Are docs managed in the same repository as code?",
+                    "requirement_level": "MAY",
+                    "hint": "This subcriterion will succeed if the documentation files exist on the same repository as the source code, e.g. under a <code>docs/</code> folder",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Documentation resides in the same repository as code",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": null,
+                                "version": null,
+                                "docker": null,
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/52/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc02.X": {
+                    "description": "Are docs following a style for the Markdown markup language?",
+                    "requirement_level": "MAY",
+                    "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-markdownlint",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "markdownlint",
+                                "lang": "Markdown",
+                                "version": "0.11.0",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/markdownlint/Dockerfile",
+                                    "reviewed": "1970-01-01"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener markdownlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "mdl --json  ."
+                                    ],
+                                    "stdout_text": "[{\"filename\":\"./CODE_OF_CONDUTC.md\",\"line\":119,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":39,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":7,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":12,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":13,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":14,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":15,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":16,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":23,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":28,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":30,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":34,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":35,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":36,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":92,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":93,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":94,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":95,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":98,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":99,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":100,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":101,\"rule\":\"MD005\",\"aliases\":[\"list-indent\"],\"description\":\"Inconsistent indentation for list items at the same level\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md005---inconsistent-indentation-for-list-items-at-the-same-level\"},{\"filename\":\"./README.md\",\"line\":49,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":58,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":63,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":68,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":74,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":79,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":85,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":86,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":87,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":94,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":100,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":108,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":109,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":3,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":6,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":18,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":21,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":26,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":27,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":36,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":37,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":40,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":105,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":106,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":28,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":103,\"rule\":\"MD025\",\"aliases\":[\"single-h1\"],\"description\":\"Multiple top level headers in the same document\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md025---multiple-top-level-headers-in-the-same-document\"},{\"filename\":\"./README.md\",\"line\":47,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":52,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":55,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":61,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":66,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":71,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":77,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":82,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":91,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":97,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":13,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":16,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":23,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":28,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":20,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":22,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":29,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":35,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":24,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/61/log?consoleFull"
+                                },
+                                "level": "RECOMMENDED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "./CODE_OF_CONDUTC.md": {
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            119
+                                        ]
+                                    }
+                                },
+                                "./CONTRIBUTING.md": {
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            39
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            7,
+                                            12,
+                                            13,
+                                            14,
+                                            15,
+                                            16,
+                                            23,
+                                            28,
+                                            30,
+                                            34,
+                                            35,
+                                            36
+                                        ]
+                                    }
+                                },
+                                "./README.md": {
+                                    "MD005": {
+                                        "description": "Inconsistent indentation for list items at the same level",
+                                        "line": [
+                                            92,
+                                            93,
+                                            94,
+                                            95,
+                                            98,
+                                            99,
+                                            100,
+                                            101
+                                        ]
+                                    },
+                                    "MD007": {
+                                        "description": "Unordered list indentation",
+                                        "line": [
+                                            49,
+                                            58,
+                                            63,
+                                            68,
+                                            74,
+                                            79,
+                                            85,
+                                            86,
+                                            87,
+                                            94,
+                                            100
+                                        ]
+                                    },
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            108,
+                                            109
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            3,
+                                            6,
+                                            18,
+                                            21,
+                                            26,
+                                            27,
+                                            36,
+                                            37,
+                                            40,
+                                            105,
+                                            106
+                                        ]
+                                    },
+                                    "MD022": {
+                                        "description": "Headers should be surrounded by blank lines",
+                                        "line": [
+                                            5,
+                                            7,
+                                            28
+                                        ]
+                                    },
+                                    "MD025": {
+                                        "description": "Multiple top level headers in the same document",
+                                        "line": [
+                                            103
+                                        ]
+                                    },
+                                    "MD029": {
+                                        "description": "Ordered list item prefix",
+                                        "line": [
+                                            47,
+                                            52,
+                                            55,
+                                            61,
+                                            66,
+                                            71,
+                                            77,
+                                            82,
+                                            91,
+                                            97
+                                        ]
+                                    },
+                                    "MD031": {
+                                        "description": "Fenced code blocks should be surrounded by blank lines",
+                                        "line": [
+                                            13,
+                                            16,
+                                            23,
+                                            28
+                                        ]
+                                    },
+                                    "MD032": {
+                                        "description": "Lists should be surrounded by blank lines",
+                                        "line": [
+                                            20,
+                                            22,
+                                            29,
+                                            35,
+                                            39
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            24
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 60,
+                "total_subcriteria": 5,
+                "success_subcriteria": 3
+            }
+        },
+        "QC.Lic": {
+            "valid": false,
+            "subcriteria": {},
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 0,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sec": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Found security weaknesses when performing SAST checks with bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener bandit",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [],\n  \"generated_at\": \"2025-05-21T12:36:48Z\",\n  \"metrics\": {\n    \"./__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./api/__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 4,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./api/volcanoes_api.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 399,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./app.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 1,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 57,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./meteo.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 5,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./model.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 23,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./routes.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 71,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 1,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 560,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": [\n    {\n      \"code\": \"349             run_command=\\\"python3 {py} -i {input}\\\".format(py=py,input=gfs_daily) \\n350             os.system(run_command)\\n351             gfs_daily_dir=os.path.join(paths[\\\"gfs_volume\\\"],id,date.strftime(\\\"%d%m%Y\\\")+\\\"_\\\"+str(hour))\\n\",\n      \"col_offset\": 12,\n      \"filename\": \"./api/volcanoes_api.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Starting a process with a shell, possible injection detected, security issue.\",\n      \"line_number\": 350,\n      \"line_range\": [\n        350\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html\",\n      \"test_id\": \"B605\",\n      \"test_name\": \"start_process_with_a_shell\"\n    }\n  ]\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [],
+                                "generated_at": "2025-05-21T12:36:48Z",
+                                "metrics": {
+                                    "./__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 1,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./api/__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 4,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./api/volcanoes_api.py": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 399,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./app.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 1,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 57,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./meteo.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 5,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./model.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 23,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./routes.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 71,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 1,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 560,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": [
+                                    {
+                                        "code": "349             run_command=\"python3 {py} -i {input}\".format(py=py,input=gfs_daily) \n350             os.system(run_command)\n351             gfs_daily_dir=os.path.join(paths[\"gfs_volume\"],id,date.strftime(\"%d%m%Y\")+\"_\"+str(hour))\n",
+                                        "col_offset": 12,
+                                        "filename": "./api/volcanoes_api.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+                                        "line_number": 350,
+                                        "line_range": [
+                                            350
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html",
+                                        "test_id": "B605",
+                                        "test_name": "start_process_with_a_shell"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sty": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sty01": {
+                    "description": "Is the software product following a style standard for Python files?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the linter tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Python files are not fully compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-flake8",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "flake8",
+                                "lang": "Python",
+                                "version": "4.0.1 (mccabe: 0.6.1, pycodestyle: 2.8.0, pyflakes: 2.4.0)",
+                                "docker": {
+                                    "image": "pipelinecomponents/flake8:0.9.0",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener flake8",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "flake8 ."
+                                    ],
+                                    "stdout_text": "./model.py:10:1: E302 expected 2 blank lines, found 1\n./model.py:11:7: E225 missing whitespace around operator\n./model.py:12:12: E225 missing whitespace around operator\n./model.py:13:9: E225 missing whitespace around operator\n./model.py:14:9: E225 missing whitespace around operator\n./model.py:15:9: E225 missing whitespace around operator\n./model.py:16:18: E225 missing whitespace around operator\n./model.py:18:1: W293 blank line contains whitespace\n./model.py:19:5: E303 too many blank lines (2)\n./model.py:21:1: W293 blank line contains whitespace\n./model.py:26:20: E203 whitespace before ':'\n./model.py:28:29: E231 missing whitespace after ':'\n./model.py:29:19: E231 missing whitespace after ':'\n./model.py:31:1: W293 blank line contains whitespace\n./model.py:31:5: W292 no newline at end of file\n./meteo.py:5:4: E225 missing whitespace around operator\n./meteo.py:8:10: W292 no newline at end of file\n./routes.py:1:28: E231 missing whitespace after ','\n./routes.py:3:16: E225 missing whitespace around operator\n./routes.py:3:45: E231 missing whitespace after ','\n./routes.py:3:54: E231 missing whitespace after ','\n./routes.py:9:15: E225 missing whitespace around operator\n./routes.py:10:15: E225 missing whitespace around operator\n./routes.py:11:17: E225 missing whitespace around operator\n./routes.py:15:1: W293 blank line contains whitespace\n./routes.py:17:17: E225 missing whitespace around operator\n./routes.py:18:22: E231 missing whitespace after ':'\n./routes.py:22:29: W291 trailing whitespace\n./routes.py:24:1: E302 expected 2 blank lines, found 1\n./routes.py:27:14: E225 missing whitespace around operator\n./routes.py:29:1: W293 blank line contains whitespace\n./routes.py:30:9: E303 too many blank lines (2)\n./routes.py:30:22: E225 missing whitespace around operator\n./routes.py:31:1: W293 blank line contains whitespace\n./routes.py:34:17: E225 missing whitespace around operator\n./routes.py:34:28: E231 missing whitespace after ':'\n./routes.py:34:47: E231 missing whitespace after ','\n./routes.py:34:56: E231 missing whitespace after ':'\n./routes.py:35:1: W293 blank line contains whitespace\n./routes.py:37:1: W293 blank line contains whitespace\n./routes.py:39:17: E225 missing whitespace around operator\n./routes.py:40:29: W291 trailing whitespace\n./routes.py:42:1: E302 expected 2 blank lines, found 1\n./routes.py:45:18: E225 missing whitespace around operator\n./routes.py:47:19: E225 missing whitespace around operator\n./routes.py:48:21: E225 missing whitespace around operator\n./routes.py:53:21: E225 missing whitespace around operator\n./routes.py:54:80: E501 line too long (87 > 79 characters)\n./routes.py:57:1: W293 blank line contains whitespace\n./routes.py:59:17: E225 missing whitespace around operator\n./routes.py:60:22: E231 missing whitespace after ':'\n./routes.py:64:29: W291 trailing whitespace\n./routes.py:65:1: E302 expected 2 blank lines, found 0\n./routes.py:65:36: E231 missing whitespace after ','\n./routes.py:68:10: E225 missing whitespace around operator\n./routes.py:69:15: E225 missing whitespace around operator\n./routes.py:70:24: E225 missing whitespace around operator\n./routes.py:73:9: W291 trailing whitespace\n./routes.py:74:15: E225 missing whitespace around operator\n./routes.py:75:1: W293 blank line contains whitespace\n./routes.py:76:17: E225 missing whitespace around operator\n./routes.py:77:26: E231 missing whitespace after ':'\n./routes.py:79:18: W291 trailing whitespace\n./routes.py:80:1: W293 blank line contains whitespace\n./routes.py:82:17: E225 missing whitespace around operator\n./routes.py:83:22: E231 missing whitespace after ':'\n./routes.py:86:29: W292 no newline at end of file\n./app.py:3:1: F401 'flask.request' imported but unused\n./app.py:3:1: F401 'flask.jsonify' imported but unused\n./app.py:3:1: E402 module level import not at top of file\n./app.py:4:1: E402 module level import not at top of file\n./app.py:5:1: F401 'model.Meteo' imported but unused\n./app.py:5:1: E402 module level import not at top of file\n./app.py:5:21: E231 missing whitespace after ','\n./app.py:5:27: E231 missing whitespace after ','\n./app.py:6:1: E402 module level import not at top of file\n./app.py:7:1: E402 module level import not at top of file\n./app.py:8:1: F811 redefinition of unused 'init_app' from line 5\n./app.py:8:1: E402 module level import not at top of file\n./app.py:9:1: E402 module level import not at top of file\n./app.py:10:1: E402 module level import not at top of file\n./app.py:11:1: E402 module level import not at top of file\n./app.py:20:28: E225 missing whitespace around operator\n./app.py:21:38: E225 missing whitespace around operator\n./app.py:26:14: E225 missing whitespace around operator\n./app.py:26:20: E261 at least two spaces before inline comment\n./app.py:26:80: E501 line too long (105 > 79 characters)\n./app.py:27:1: E302 expected 2 blank lines, found 0\n./app.py:27:29: E231 missing whitespace after ','\n./app.py:28:1: W293 blank line contains whitespace\n./app.py:38:1: W293 blank line contains whitespace\n./app.py:46:1: W293 blank line contains whitespace\n./app.py:49:1: E305 expected 2 blank lines after class or function definition, found 1\n./app.py:49:16: E225 missing whitespace around operator\n./app.py:50:1: E302 expected 2 blank lines, found 0\n./app.py:50:17: E201 whitespace after '('\n./app.py:52:1: W293 blank line contains whitespace\n./app.py:73:1: E305 expected 2 blank lines after class or function definition, found 1\n./app.py:74:8: E225 missing whitespace around operator\n./app.py:74:20: E231 missing whitespace after ','\n./app.py:76:12: E225 missing whitespace around operator\n./app.py:77:23: W291 trailing whitespace\n./app.py:78:1: W293 blank line contains whitespace\n./app.py:80:1: W293 blank line contains whitespace\n./app.py:81:1: W293 blank line contains whitespace\n./app.py:81:1: E303 too many blank lines (3)\n./app.py:81:5: W292 no newline at end of file\n./__init__.py:1:9: E225 missing whitespace around operator\n./__init__.py:1:28: W292 no newline at end of file\n./api/volcanoes_api.py:6:1: F403 'from ehp import *' used; unable to detect undefined names\n./api/volcanoes_api.py:9:1: F401 'time.sleep' imported but unused\n./api/volcanoes_api.py:10:46: W291 trailing whitespace\n./api/volcanoes_api.py:14:1: E302 expected 2 blank lines, found 1\n./api/volcanoes_api.py:15:23: E203 whitespace before ':'\n./api/volcanoes_api.py:16:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:17:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:18:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:20:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:21:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:21:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:23:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:25:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:26:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:27:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:27:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:29:1: E302 expected 2 blank lines, found 0\n./api/volcanoes_api.py:30:22: E231 missing whitespace after ','\n./api/volcanoes_api.py:30:29: E231 missing whitespace after ','\n./api/volcanoes_api.py:31:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:32:20: E225 missing whitespace around operator\n./api/volcanoes_api.py:33:25: E225 missing whitespace around operator\n./api/volcanoes_api.py:34:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:35:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:35:23: E231 missing whitespace after ','\n./api/volcanoes_api.py:36:12: E225 missing whitespace around operator\n./api/volcanoes_api.py:37:13: E225 missing whitespace around operator\n./api/volcanoes_api.py:38:26: E231 missing whitespace after ':'\n./api/volcanoes_api.py:39:20: E231 missing whitespace after ':'\n./api/volcanoes_api.py:41:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:41:35: E231 missing whitespace after ','\n./api/volcanoes_api.py:43:1: E302 expected 2 blank lines, found 0\n./api/volcanoes_api.py:44:23: E203 whitespace before ':'\n./api/volcanoes_api.py:45:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:46:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:47:23: E225 missing whitespace around operator\n./api/volcanoes_api.py:48:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:49:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:50:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:51:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:53:13: E225 missing whitespace around operator\n./api/volcanoes_api.py:53:14: F405 'Html' may be undefined, or defined from star imports: ehp\n./api/volcanoes_api.py:54:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:56:26: E225 missing whitespace around operator\n./api/volcanoes_api.py:57:16: F632 use ==/!= to compare constant literals (str, bytes, int, float, tuple)\n./api/volcanoes_api.py:58:31: E225 missing whitespace around operator\n./api/volcanoes_api.py:58:32: F405 'volcanoes_list' may be undefined, or defined from star imports: ehp\n./api/volcanoes_api.py:59:17: E265 block comment should start with '# '\n./api/volcanoes_api.py:62:17: E265 block comment should start with '# '\n./api/volcanoes_api.py:63:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:64:31: E225 missing whitespace around operator\n./api/volcanoes_api.py:65:25: E231 missing whitespace after ':'\n./api/volcanoes_api.py:66:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:67:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:68:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:69:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:73:77: E231 missing whitespace after ','\n./api/volcanoes_api.py:73:80: E501 line too long (104 > 79 characters)\n./api/volcanoes_api.py:73:82: E231 missing whitespace after ','\n./api/volcanoes_api.py:73:101: F405 'i' may be undefined, or defined from star imports: ehp\n./api/volcanoes_api.py:74:39: W291 trailing whitespace\n./api/volcanoes_api.py:75:31: W291 trailing whitespace\n./api/volcanoes_api.py:77:9: E265 block comment should start with '# '\n./api/volcanoes_api.py:77:80: E501 line too long (133 > 79 characters)\n./api/volcanoes_api.py:78:28: E231 missing whitespace after ','\n./api/volcanoes_api.py:78:36: E231 missing whitespace after ','\n./api/volcanoes_api.py:78:41: E231 missing whitespace after ','\n./api/volcanoes_api.py:80:21: F841 local variable 'id' is assigned to but never used\n./api/volcanoes_api.py:80:21: E117 over-indented\n./api/volcanoes_api.py:80:23: E225 missing whitespace around operator\n./api/volcanoes_api.py:81:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:82:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:83:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:84:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:86:36: E271 multiple spaces after keyword\n./api/volcanoes_api.py:89:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:92:38: E225 missing whitespace around operator\n./api/volcanoes_api.py:92:80: E501 line too long (98 > 79 characters)\n./api/volcanoes_api.py:92:87: E231 missing whitespace after ','\n./api/volcanoes_api.py:93:39: E225 missing whitespace around operator\n./api/volcanoes_api.py:94:48: E225 missing whitespace around operator\n./api/volcanoes_api.py:96:40: E225 missing whitespace around operator\n./api/volcanoes_api.py:97:40: E225 missing whitespace around operator\n./api/volcanoes_api.py:97:80: E501 line too long (123 > 79 characters)\n./api/volcanoes_api.py:98:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:99:80: E501 line too long (105 > 79 characters)\n./api/volcanoes_api.py:100:44: E225 missing whitespace around operator\n./api/volcanoes_api.py:101:50: E231 missing whitespace after ','\n./api/volcanoes_api.py:102:42: E225 missing whitespace around operator\n./api/volcanoes_api.py:102:80: E501 line too long (80 > 79 characters)\n./api/volcanoes_api.py:103:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:105:48: E225 missing whitespace around operator\n./api/volcanoes_api.py:106:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:108:49: E225 missing whitespace around operator\n./api/volcanoes_api.py:108:66: E231 missing whitespace after ','\n./api/volcanoes_api.py:109:49: E225 missing whitespace around operator\n./api/volcanoes_api.py:111:53: E225 missing whitespace around operator\n./api/volcanoes_api.py:111:80: E501 line too long (200 > 79 characters)\n./api/volcanoes_api.py:111:184: E231 missing whitespace after ','\n./api/volcanoes_api.py:112:60: E231 missing whitespace after ','\n./api/volcanoes_api.py:113:54: E225 missing whitespace around operator\n./api/volcanoes_api.py:114:77: E231 missing whitespace after ','\n./api/volcanoes_api.py:114:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:115:80: E501 line too long (119 > 79 characters)\n./api/volcanoes_api.py:116:59: E201 whitespace after '('\n./api/volcanoes_api.py:116:80: E501 line too long (82 > 79 characters)\n./api/volcanoes_api.py:117:62: E225 missing whitespace around operator\n./api/volcanoes_api.py:117:80: E501 line too long (126 > 79 characters)\n./api/volcanoes_api.py:117:92: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:98: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:105: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:112: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:119: E231 missing whitespace after ','\n./api/volcanoes_api.py:118:80: E501 line too long (200 > 79 characters)\n./api/volcanoes_api.py:118:194: E231 missing whitespace after ','\n./api/volcanoes_api.py:119:71: E231 missing whitespace after ','\n./api/volcanoes_api.py:120:63: E231 missing whitespace after ','\n./api/volcanoes_api.py:120:73: E231 missing whitespace after ','\n./api/volcanoes_api.py:121:59: E225 missing whitespace around operator\n./api/volcanoes_api.py:121:80: E501 line too long (94 > 79 characters)\n./api/volcanoes_api.py:121:88: E231 missing whitespace after ','\n./api/volcanoes_api.py:123:60: E203 whitespace before ':'\n./api/volcanoes_api.py:124:80: E501 line too long (94 > 79 characters)\n./api/volcanoes_api.py:124:88: E231 missing whitespace after ','\n./api/volcanoes_api.py:125:61: E225 missing whitespace around operator\n./api/volcanoes_api.py:125:80: E501 line too long (82 > 79 characters)\n./api/volcanoes_api.py:126:64: E225 missing whitespace around operator\n./api/volcanoes_api.py:127:65: E225 missing whitespace around operator\n./api/volcanoes_api.py:128:68: E231 missing whitespace after ','\n./api/volcanoes_api.py:129:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:131:80: E501 line too long (93 > 79 characters)\n./api/volcanoes_api.py:132:69: E231 missing whitespace after ','\n./api/volcanoes_api.py:134:80: E501 line too long (93 > 79 characters)\n./api/volcanoes_api.py:135:65: E231 missing whitespace after ','\n./api/volcanoes_api.py:137:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:138:61: E231 missing whitespace after ','\n./api/volcanoes_api.py:139:41: F841 local variable 'e' is assigned to but never used\n./api/volcanoes_api.py:140:80: E501 line too long (96 > 79 characters)\n./api/volcanoes_api.py:143:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:146:43: E225 missing whitespace around operator\n./api/volcanoes_api.py:146:72: E231 missing whitespace after ','\n./api/volcanoes_api.py:148:72: E231 missing whitespace after ','\n./api/volcanoes_api.py:149:53: E231 missing whitespace after ','\n./api/volcanoes_api.py:152:53: E231 missing whitespace after ','\n./api/volcanoes_api.py:154:36: E225 missing whitespace around operator\n./api/volcanoes_api.py:155:36: E225 missing whitespace around operator\n./api/volcanoes_api.py:155:80: E501 line too long (119 > 79 characters)\n./api/volcanoes_api.py:156:37: E225 missing whitespace around operator\n./api/volcanoes_api.py:157:36: E225 missing whitespace around operator\n./api/volcanoes_api.py:157:57: W291 trailing whitespace\n./api/volcanoes_api.py:158:34: E225 missing whitespace around operator\n./api/volcanoes_api.py:159:42: E225 missing whitespace around operator\n./api/volcanoes_api.py:160:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:162:44: E225 missing whitespace around operator\n./api/volcanoes_api.py:163:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:165:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:165:62: E231 missing whitespace after ','\n./api/volcanoes_api.py:166:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:168:49: E225 missing whitespace around operator\n./api/volcanoes_api.py:168:80: E501 line too long (196 > 79 characters)\n./api/volcanoes_api.py:168:180: E231 missing whitespace after ','\n./api/volcanoes_api.py:169:56: E231 missing whitespace after ','\n./api/volcanoes_api.py:170:50: E225 missing whitespace around operator\n./api/volcanoes_api.py:171:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:172:80: E501 line too long (115 > 79 characters)\n./api/volcanoes_api.py:173:58: E225 missing whitespace around operator\n./api/volcanoes_api.py:173:80: E501 line too long (122 > 79 characters)\n./api/volcanoes_api.py:173:88: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:94: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:101: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:108: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:115: E231 missing whitespace after ','\n./api/volcanoes_api.py:174:80: E501 line too long (196 > 79 characters)\n./api/volcanoes_api.py:174:190: E231 missing whitespace after ','\n./api/volcanoes_api.py:175:67: E231 missing whitespace after ','\n./api/volcanoes_api.py:176:59: E231 missing whitespace after ','\n./api/volcanoes_api.py:176:69: E231 missing whitespace after ','\n./api/volcanoes_api.py:177:55: E225 missing whitespace around operator\n./api/volcanoes_api.py:177:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:177:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:179:80: E501 line too long (87 > 79 characters)\n./api/volcanoes_api.py:179:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:180:57: E225 missing whitespace around operator\n./api/volcanoes_api.py:181:60: E225 missing whitespace around operator\n./api/volcanoes_api.py:182:61: E225 missing whitespace around operator\n./api/volcanoes_api.py:183:64: E231 missing whitespace after ','\n./api/volcanoes_api.py:185:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:186:65: E231 missing whitespace after ','\n./api/volcanoes_api.py:188:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:189:61: E231 missing whitespace after ','\n./api/volcanoes_api.py:191:80: E501 line too long (85 > 79 characters)\n./api/volcanoes_api.py:192:57: E231 missing whitespace after ','\n./api/volcanoes_api.py:193:37: F841 local variable 'e' is assigned to but never used\n./api/volcanoes_api.py:194:80: E501 line too long (92 > 79 characters)\n./api/volcanoes_api.py:196:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:198:80: E501 line too long (86 > 79 characters)\n./api/volcanoes_api.py:199:49: E231 missing whitespace after ','\n./api/volcanoes_api.py:201:32: E225 missing whitespace around operator\n./api/volcanoes_api.py:202:32: E225 missing whitespace around operator\n./api/volcanoes_api.py:202:80: E501 line too long (115 > 79 characters)\n./api/volcanoes_api.py:203:33: E225 missing whitespace around operator\n./api/volcanoes_api.py:204:32: E225 missing whitespace around operator\n./api/volcanoes_api.py:204:53: W291 trailing whitespace\n./api/volcanoes_api.py:205:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:206:38: E225 missing whitespace around operator\n./api/volcanoes_api.py:207:37: E225 missing whitespace around operator\n./api/volcanoes_api.py:209:40: E225 missing whitespace around operator\n./api/volcanoes_api.py:210:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:212:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:212:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:213:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:215:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:215:80: E501 line too long (192 > 79 characters)\n./api/volcanoes_api.py:215:176: E231 missing whitespace after ','\n./api/volcanoes_api.py:216:52: E231 missing whitespace after ','\n./api/volcanoes_api.py:217:46: E225 missing whitespace around operator\n./api/volcanoes_api.py:218:54: E231 missing whitespace after ','\n./api/volcanoes_api.py:219:80: E501 line too long (111 > 79 characters)\n./api/volcanoes_api.py:220:45: F841 local variable 'meteo_inp' is assigned to but never used\n./api/volcanoes_api.py:220:54: E225 missing whitespace around operator\n./api/volcanoes_api.py:220:80: E501 line too long (118 > 79 characters)\n./api/volcanoes_api.py:220:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:90: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:97: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:104: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:111: E231 missing whitespace after ','\n./api/volcanoes_api.py:221:80: E501 line too long (192 > 79 characters)\n./api/volcanoes_api.py:221:186: E231 missing whitespace after ','\n./api/volcanoes_api.py:222:63: E231 missing whitespace after ','\n./api/volcanoes_api.py:223:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:223:65: E231 missing whitespace after ','\n./api/volcanoes_api.py:224:51: E225 missing whitespace around operator\n./api/volcanoes_api.py:224:80: E501 line too long (86 > 79 characters)\n./api/volcanoes_api.py:224:80: E231 missing whitespace after ','\n./api/volcanoes_api.py:226:80: E501 line too long (83 > 79 characters)\n./api/volcanoes_api.py:226:80: E231 missing whitespace after ','\n./api/volcanoes_api.py:227:53: E225 missing whitespace around operator\n./api/volcanoes_api.py:228:56: E225 missing whitespace around operator\n./api/volcanoes_api.py:229:57: E225 missing whitespace around operator\n./api/volcanoes_api.py:230:60: E231 missing whitespace after ','\n./api/volcanoes_api.py:232:80: E501 line too long (85 > 79 characters)\n./api/volcanoes_api.py:233:61: E231 missing whitespace after ','\n./api/volcanoes_api.py:235:80: E501 line too long (85 > 79 characters)\n./api/volcanoes_api.py:236:57: E231 missing whitespace after ','\n./api/volcanoes_api.py:238:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:239:53: E231 missing whitespace after ','\n./api/volcanoes_api.py:240:33: F841 local variable 'e' is assigned to but never used\n./api/volcanoes_api.py:241:80: E501 line too long (88 > 79 characters)\n./api/volcanoes_api.py:243:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:245:80: E501 line too long (82 > 79 characters)\n./api/volcanoes_api.py:246:45: E231 missing whitespace after ','\n./api/volcanoes_api.py:248:48: W291 trailing whitespace\n./api/volcanoes_api.py:249:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:251:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:251:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:253:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:254:30: E231 missing whitespace after ','\n./api/volcanoes_api.py:254:35: E231 missing whitespace after ','\n./api/volcanoes_api.py:255:14: E225 missing whitespace around operator\n./api/volcanoes_api.py:257:22: E211 whitespace before '('\n./api/volcanoes_api.py:257:29: E231 missing whitespace after ','\n./api/volcanoes_api.py:258:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:259:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:260:35: E231 missing whitespace after ':'\n./api/volcanoes_api.py:261:36: E231 missing whitespace after ':'\n./api/volcanoes_api.py:264:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:265:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:267:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:267:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:270:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:270:28: E231 missing whitespace after ','\n./api/volcanoes_api.py:270:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:273:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:274:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:275:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:275:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:275:80: E501 line too long (101 > 79 characters)\n./api/volcanoes_api.py:275:93: E231 missing whitespace after ','\n./api/volcanoes_api.py:277:46: W291 trailing whitespace\n./api/volcanoes_api.py:280:23: E225 missing whitespace around operator\n./api/volcanoes_api.py:280:56: E231 missing whitespace after ','\n./api/volcanoes_api.py:282:31: E225 missing whitespace around operator\n./api/volcanoes_api.py:287:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:287:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:288:18: W291 trailing whitespace\n./api/volcanoes_api.py:289:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:290:28: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:38: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:45: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:52: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:59: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:66: E231 missing whitespace after ','\n./api/volcanoes_api.py:291:19: E231 missing whitespace after ','\n./api/volcanoes_api.py:293:22: E211 whitespace before '('\n./api/volcanoes_api.py:294:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:295:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:297:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:298:67: E231 missing whitespace after ','\n./api/volcanoes_api.py:299:72: E231 missing whitespace after ','\n./api/volcanoes_api.py:300:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:300:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:300:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:300:80: E501 line too long (96 > 79 characters)\n./api/volcanoes_api.py:302:46: W291 trailing whitespace\n./api/volcanoes_api.py:306:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:306:83: E231 missing whitespace after ','\n./api/volcanoes_api.py:308:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:308:49: E231 missing whitespace after ','\n./api/volcanoes_api.py:308:80: E501 line too long (103 > 79 characters)\n./api/volcanoes_api.py:309:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:309:42: E231 missing whitespace after ','\n./api/volcanoes_api.py:309:80: E501 line too long (83 > 79 characters)\n./api/volcanoes_api.py:310:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:310:48: E231 missing whitespace after ','\n./api/volcanoes_api.py:310:80: E501 line too long (93 > 79 characters)\n./api/volcanoes_api.py:311:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:311:47: E231 missing whitespace after ','\n./api/volcanoes_api.py:311:80: E501 line too long (106 > 79 characters)\n./api/volcanoes_api.py:311:93: E231 missing whitespace after ','\n./api/volcanoes_api.py:312:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:312:47: E231 missing whitespace after ','\n./api/volcanoes_api.py:312:80: E501 line too long (105 > 79 characters)\n./api/volcanoes_api.py:312:92: E231 missing whitespace after ','\n./api/volcanoes_api.py:313:20: E225 missing whitespace around operator\n./api/volcanoes_api.py:313:43: E231 missing whitespace after ','\n./api/volcanoes_api.py:314:22: E211 whitespace before '('\n./api/volcanoes_api.py:314:31: E231 missing whitespace after ','\n./api/volcanoes_api.py:317:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:317:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:319:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:319:23: E231 missing whitespace after ','\n./api/volcanoes_api.py:320:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:322:22: E211 whitespace before '('\n./api/volcanoes_api.py:323:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:324:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:325:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:327:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:327:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:330:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:330:26: E231 missing whitespace after ','\n./api/volcanoes_api.py:330:31: E231 missing whitespace after ','\n./api/volcanoes_api.py:332:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:334:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:335:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:336:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:336:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:336:80: E501 line too long (95 > 79 characters)\n./api/volcanoes_api.py:339:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:341:11: E111 indentation is not a multiple of 4\n./api/volcanoes_api.py:341:73: E231 missing whitespace after ','\n./api/volcanoes_api.py:341:80: W291 trailing whitespace\n./api/volcanoes_api.py:342:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:342:17: E231 missing whitespace after ','\n./api/volcanoes_api.py:342:22: E231 missing whitespace after ','\n./api/volcanoes_api.py:342:27: E231 missing whitespace after ','\n./api/volcanoes_api.py:344:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:346:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:347:15: E225 missing whitespace around operator\n./api/volcanoes_api.py:347:39: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:348:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:80: E501 line too long (108 > 79 characters)\n./api/volcanoes_api.py:348:96: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:109: W291 trailing whitespace\n./api/volcanoes_api.py:349:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:349:63: E231 missing whitespace after ','\n./api/volcanoes_api.py:349:80: W291 trailing whitespace\n./api/volcanoes_api.py:351:26: E225 missing whitespace around operator\n./api/volcanoes_api.py:351:59: E231 missing whitespace after ','\n./api/volcanoes_api.py:351:62: E231 missing whitespace after ','\n./api/volcanoes_api.py:351:80: E501 line too long (100 > 79 characters)\n./api/volcanoes_api.py:352:13: E265 block comment should start with '# '\n./api/volcanoes_api.py:353:13: E265 block comment should start with '# '\n./api/volcanoes_api.py:354:19: E225 missing whitespace around operator\n./api/volcanoes_api.py:355:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:355:48: E231 missing whitespace after ','\n./api/volcanoes_api.py:355:51: E231 missing whitespace after ','\n./api/volcanoes_api.py:355:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:356:15: E225 missing whitespace around operator\n./api/volcanoes_api.py:356:36: E231 missing whitespace after ','\n./api/volcanoes_api.py:359:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:359:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:361:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:362:14: E225 missing whitespace around operator\n./api/volcanoes_api.py:364:22: E211 whitespace before '('\n./api/volcanoes_api.py:365:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:366:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:367:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:369:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:369:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:372:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:373:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:374:5: E303 too many blank lines (2)\n./api/volcanoes_api.py:374:24: E231 missing whitespace after ','\n./api/volcanoes_api.py:375:12: E225 missing whitespace around operator\n./api/volcanoes_api.py:375:15: E231 missing whitespace after ','\n./api/volcanoes_api.py:375:17: E231 missing whitespace after ','\n./api/volcanoes_api.py:375:20: E231 missing whitespace after ','\n./api/volcanoes_api.py:376:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:378:20: E225 missing whitespace around operator\n./api/volcanoes_api.py:389:5: E265 block comment should start with '# '\n./api/volcanoes_api.py:389:18: W291 trailing whitespace\n./api/volcanoes_api.py:390:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:396:16: E225 missing whitespace around operator\n./api/volcanoes_api.py:396:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:401:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:401:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:406:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:407:26: E231 missing whitespace after ','\n./api/volcanoes_api.py:409:80: E501 line too long (91 > 79 characters)\n./api/volcanoes_api.py:419:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:423:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:428:80: E501 line too long (103 > 79 characters)\n./api/volcanoes_api.py:429:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:430:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:433:80: E501 line too long (141 > 79 characters)\n./api/volcanoes_api.py:433:135: E231 missing whitespace after ','\n./api/volcanoes_api.py:437:80: E501 line too long (182 > 79 characters)\n./api/volcanoes_api.py:437:176: E231 missing whitespace after ','\n./api/volcanoes_api.py:439:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:439:12: W292 no newline at end of file\n./api/__init__.py:1:8: E225 missing whitespace around operator\n./api/__init__.py:2:9: E225 missing whitespace around operator\n./api/__init__.py:3:11: E225 missing whitespace around operator\n./api/__init__.py:4:12: E225 missing whitespace around operator\n./api/__init__.py:4:15: W292 no newline at end of file",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/88/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": "./model.py:10:1: E302 expected 2 blank lines, found 1\n./model.py:11:7: E225 missing whitespace around operator\n./model.py:12:12: E225 missing whitespace around operator\n./model.py:13:9: E225 missing whitespace around operator\n./model.py:14:9: E225 missing whitespace around operator\n./model.py:15:9: E225 missing whitespace around operator\n./model.py:16:18: E225 missing whitespace around operator\n./model.py:18:1: W293 blank line contains whitespace\n./model.py:19:5: E303 too many blank lines (2)\n./model.py:21:1: W293 blank line contains whitespace\n./model.py:26:20: E203 whitespace before ':'\n./model.py:28:29: E231 missing whitespace after ':'\n./model.py:29:19: E231 missing whitespace after ':'\n./model.py:31:1: W293 blank line contains whitespace\n./model.py:31:5: W292 no newline at end of file\n./meteo.py:5:4: E225 missing whitespace around operator\n./meteo.py:8:10: W292 no newline at end of file\n./routes.py:1:28: E231 missing whitespace after ','\n./routes.py:3:16: E225 missing whitespace around operator\n./routes.py:3:45: E231 missing whitespace after ','\n./routes.py:3:54: E231 missing whitespace after ','\n./routes.py:9:15: E225 missing whitespace around operator\n./routes.py:10:15: E225 missing whitespace around operator\n./routes.py:11:17: E225 missing whitespace around operator\n./routes.py:15:1: W293 blank line contains whitespace\n./routes.py:17:17: E225 missing whitespace around operator\n./routes.py:18:22: E231 missing whitespace after ':'\n./routes.py:22:29: W291 trailing whitespace\n./routes.py:24:1: E302 expected 2 blank lines, found 1\n./routes.py:27:14: E225 missing whitespace around operator\n./routes.py:29:1: W293 blank line contains whitespace\n./routes.py:30:9: E303 too many blank lines (2)\n./routes.py:30:22: E225 missing whitespace around operator\n./routes.py:31:1: W293 blank line contains whitespace\n./routes.py:34:17: E225 missing whitespace around operator\n./routes.py:34:28: E231 missing whitespace after ':'\n./routes.py:34:47: E231 missing whitespace after ','\n./routes.py:34:56: E231 missing whitespace after ':'\n./routes.py:35:1: W293 blank line contains whitespace\n./routes.py:37:1: W293 blank line contains whitespace\n./routes.py:39:17: E225 missing whitespace around operator\n./routes.py:40:29: W291 trailing whitespace\n./routes.py:42:1: E302 expected 2 blank lines, found 1\n./routes.py:45:18: E225 missing whitespace around operator\n./routes.py:47:19: E225 missing whitespace around operator\n./routes.py:48:21: E225 missing whitespace around operator\n./routes.py:53:21: E225 missing whitespace around operator\n./routes.py:54:80: E501 line too long (87 > 79 characters)\n./routes.py:57:1: W293 blank line contains whitespace\n./routes.py:59:17: E225 missing whitespace around operator\n./routes.py:60:22: E231 missing whitespace after ':'\n./routes.py:64:29: W291 trailing whitespace\n./routes.py:65:1: E302 expected 2 blank lines, found 0\n./routes.py:65:36: E231 missing whitespace after ','\n./routes.py:68:10: E225 missing whitespace around operator\n./routes.py:69:15: E225 missing whitespace around operator\n./routes.py:70:24: E225 missing whitespace around operator\n./routes.py:73:9: W291 trailing whitespace\n./routes.py:74:15: E225 missing whitespace around operator\n./routes.py:75:1: W293 blank line contains whitespace\n./routes.py:76:17: E225 missing whitespace around operator\n./routes.py:77:26: E231 missing whitespace after ':'\n./routes.py:79:18: W291 trailing whitespace\n./routes.py:80:1: W293 blank line contains whitespace\n./routes.py:82:17: E225 missing whitespace around operator\n./routes.py:83:22: E231 missing whitespace after ':'\n./routes.py:86:29: W292 no newline at end of file\n./app.py:3:1: F401 'flask.request' imported but unused\n./app.py:3:1: F401 'flask.jsonify' imported but unused\n./app.py:3:1: E402 module level import not at top of file\n./app.py:4:1: E402 module level import not at top of file\n./app.py:5:1: F401 'model.Meteo' imported but unused\n./app.py:5:1: E402 module level import not at top of file\n./app.py:5:21: E231 missing whitespace after ','\n./app.py:5:27: E231 missing whitespace after ','\n./app.py:6:1: E402 module level import not at top of file\n./app.py:7:1: E402 module level import not at top of file\n./app.py:8:1: F811 redefinition of unused 'init_app' from line 5\n./app.py:8:1: E402 module level import not at top of file\n./app.py:9:1: E402 module level import not at top of file\n./app.py:10:1: E402 module level import not at top of file\n./app.py:11:1: E402 module level import not at top of file\n./app.py:20:28: E225 missing whitespace around operator\n./app.py:21:38: E225 missing whitespace around operator\n./app.py:26:14: E225 missing whitespace around operator\n./app.py:26:20: E261 at least two spaces before inline comment\n./app.py:26:80: E501 line too long (105 > 79 characters)\n./app.py:27:1: E302 expected 2 blank lines, found 0\n./app.py:27:29: E231 missing whitespace after ','\n./app.py:28:1: W293 blank line contains whitespace\n./app.py:38:1: W293 blank line contains whitespace\n./app.py:46:1: W293 blank line contains whitespace\n./app.py:49:1: E305 expected 2 blank lines after class or function definition, found 1\n./app.py:49:16: E225 missing whitespace around operator\n./app.py:50:1: E302 expected 2 blank lines, found 0\n./app.py:50:17: E201 whitespace after '('\n./app.py:52:1: W293 blank line contains whitespace\n./app.py:73:1: E305 expected 2 blank lines after class or function definition, found 1\n./app.py:74:8: E225 missing whitespace around operator\n./app.py:74:20: E231 missing whitespace after ','\n./app.py:76:12: E225 missing whitespace around operator\n./app.py:77:23: W291 trailing whitespace\n./app.py:78:1: W293 blank line contains whitespace\n./app.py:80:1: W293 blank line contains whitespace\n./app.py:81:1: W293 blank line contains whitespace\n./app.py:81:1: E303 too many blank lines (3)\n./app.py:81:5: W292 no newline at end of file\n./__init__.py:1:9: E225 missing whitespace around operator\n./__init__.py:1:28: W292 no newline at end of file\n./api/volcanoes_api.py:6:1: F403 'from ehp import *' used; unable to detect undefined names\n./api/volcanoes_api.py:9:1: F401 'time.sleep' imported but unused\n./api/volcanoes_api.py:10:46: W291 trailing whitespace\n./api/volcanoes_api.py:14:1: E302 expected 2 blank lines, found 1\n./api/volcanoes_api.py:15:23: E203 whitespace before ':'\n./api/volcanoes_api.py:16:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:17:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:18:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:20:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:21:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:21:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:23:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:25:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:26:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:27:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:27:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:29:1: E302 expected 2 blank lines, found 0\n./api/volcanoes_api.py:30:22: E231 missing whitespace after ','\n./api/volcanoes_api.py:30:29: E231 missing whitespace after ','\n./api/volcanoes_api.py:31:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:32:20: E225 missing whitespace around operator\n./api/volcanoes_api.py:33:25: E225 missing whitespace around operator\n./api/volcanoes_api.py:34:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:35:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:35:23: E231 missing whitespace after ','\n./api/volcanoes_api.py:36:12: E225 missing whitespace around operator\n./api/volcanoes_api.py:37:13: E225 missing whitespace around operator\n./api/volcanoes_api.py:38:26: E231 missing whitespace after ':'\n./api/volcanoes_api.py:39:20: E231 missing whitespace after ':'\n./api/volcanoes_api.py:41:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:41:35: E231 missing whitespace after ','\n./api/volcanoes_api.py:43:1: E302 expected 2 blank lines, found 0\n./api/volcanoes_api.py:44:23: E203 whitespace before ':'\n./api/volcanoes_api.py:45:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:46:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:47:23: E225 missing whitespace around operator\n./api/volcanoes_api.py:48:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:49:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:50:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:51:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:53:13: E225 missing whitespace around operator\n./api/volcanoes_api.py:53:14: F405 'Html' may be undefined, or defined from star imports: ehp\n./api/volcanoes_api.py:54:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:56:26: E225 missing whitespace around operator\n./api/volcanoes_api.py:57:16: F632 use ==/!= to compare constant literals (str, bytes, int, float, tuple)\n./api/volcanoes_api.py:58:31: E225 missing whitespace around operator\n./api/volcanoes_api.py:58:32: F405 'volcanoes_list' may be undefined, or defined from star imports: ehp\n./api/volcanoes_api.py:59:17: E265 block comment should start with '# '\n./api/volcanoes_api.py:62:17: E265 block comment should start with '# '\n./api/volcanoes_api.py:63:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:64:31: E225 missing whitespace around operator\n./api/volcanoes_api.py:65:25: E231 missing whitespace after ':'\n./api/volcanoes_api.py:66:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:67:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:68:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:69:29: E231 missing whitespace after ':'\n./api/volcanoes_api.py:73:77: E231 missing whitespace after ','\n./api/volcanoes_api.py:73:80: E501 line too long (104 > 79 characters)\n./api/volcanoes_api.py:73:82: E231 missing whitespace after ','\n./api/volcanoes_api.py:73:101: F405 'i' may be undefined, or defined from star imports: ehp\n./api/volcanoes_api.py:74:39: W291 trailing whitespace\n./api/volcanoes_api.py:75:31: W291 trailing whitespace\n./api/volcanoes_api.py:77:9: E265 block comment should start with '# '\n./api/volcanoes_api.py:77:80: E501 line too long (133 > 79 characters)\n./api/volcanoes_api.py:78:28: E231 missing whitespace after ','\n./api/volcanoes_api.py:78:36: E231 missing whitespace after ','\n./api/volcanoes_api.py:78:41: E231 missing whitespace after ','\n./api/volcanoes_api.py:80:21: F841 local variable 'id' is assigned to but never used\n./api/volcanoes_api.py:80:21: E117 over-indented\n./api/volcanoes_api.py:80:23: E225 missing whitespace around operator\n./api/volcanoes_api.py:81:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:82:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:83:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:84:27: E225 missing whitespace around operator\n./api/volcanoes_api.py:86:36: E271 multiple spaces after keyword\n./api/volcanoes_api.py:89:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:92:38: E225 missing whitespace around operator\n./api/volcanoes_api.py:92:80: E501 line too long (98 > 79 characters)\n./api/volcanoes_api.py:92:87: E231 missing whitespace after ','\n./api/volcanoes_api.py:93:39: E225 missing whitespace around operator\n./api/volcanoes_api.py:94:48: E225 missing whitespace around operator\n./api/volcanoes_api.py:96:40: E225 missing whitespace around operator\n./api/volcanoes_api.py:97:40: E225 missing whitespace around operator\n./api/volcanoes_api.py:97:80: E501 line too long (123 > 79 characters)\n./api/volcanoes_api.py:98:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:99:80: E501 line too long (105 > 79 characters)\n./api/volcanoes_api.py:100:44: E225 missing whitespace around operator\n./api/volcanoes_api.py:101:50: E231 missing whitespace after ','\n./api/volcanoes_api.py:102:42: E225 missing whitespace around operator\n./api/volcanoes_api.py:102:80: E501 line too long (80 > 79 characters)\n./api/volcanoes_api.py:103:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:105:48: E225 missing whitespace around operator\n./api/volcanoes_api.py:106:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:108:49: E225 missing whitespace around operator\n./api/volcanoes_api.py:108:66: E231 missing whitespace after ','\n./api/volcanoes_api.py:109:49: E225 missing whitespace around operator\n./api/volcanoes_api.py:111:53: E225 missing whitespace around operator\n./api/volcanoes_api.py:111:80: E501 line too long (200 > 79 characters)\n./api/volcanoes_api.py:111:184: E231 missing whitespace after ','\n./api/volcanoes_api.py:112:60: E231 missing whitespace after ','\n./api/volcanoes_api.py:113:54: E225 missing whitespace around operator\n./api/volcanoes_api.py:114:77: E231 missing whitespace after ','\n./api/volcanoes_api.py:114:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:115:80: E501 line too long (119 > 79 characters)\n./api/volcanoes_api.py:116:59: E201 whitespace after '('\n./api/volcanoes_api.py:116:80: E501 line too long (82 > 79 characters)\n./api/volcanoes_api.py:117:62: E225 missing whitespace around operator\n./api/volcanoes_api.py:117:80: E501 line too long (126 > 79 characters)\n./api/volcanoes_api.py:117:92: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:98: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:105: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:112: E231 missing whitespace after ','\n./api/volcanoes_api.py:117:119: E231 missing whitespace after ','\n./api/volcanoes_api.py:118:80: E501 line too long (200 > 79 characters)\n./api/volcanoes_api.py:118:194: E231 missing whitespace after ','\n./api/volcanoes_api.py:119:71: E231 missing whitespace after ','\n./api/volcanoes_api.py:120:63: E231 missing whitespace after ','\n./api/volcanoes_api.py:120:73: E231 missing whitespace after ','\n./api/volcanoes_api.py:121:59: E225 missing whitespace around operator\n./api/volcanoes_api.py:121:80: E501 line too long (94 > 79 characters)\n./api/volcanoes_api.py:121:88: E231 missing whitespace after ','\n./api/volcanoes_api.py:123:60: E203 whitespace before ':'\n./api/volcanoes_api.py:124:80: E501 line too long (94 > 79 characters)\n./api/volcanoes_api.py:124:88: E231 missing whitespace after ','\n./api/volcanoes_api.py:125:61: E225 missing whitespace around operator\n./api/volcanoes_api.py:125:80: E501 line too long (82 > 79 characters)\n./api/volcanoes_api.py:126:64: E225 missing whitespace around operator\n./api/volcanoes_api.py:127:65: E225 missing whitespace around operator\n./api/volcanoes_api.py:128:68: E231 missing whitespace after ','\n./api/volcanoes_api.py:129:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:131:80: E501 line too long (93 > 79 characters)\n./api/volcanoes_api.py:132:69: E231 missing whitespace after ','\n./api/volcanoes_api.py:134:80: E501 line too long (93 > 79 characters)\n./api/volcanoes_api.py:135:65: E231 missing whitespace after ','\n./api/volcanoes_api.py:137:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:138:61: E231 missing whitespace after ','\n./api/volcanoes_api.py:139:41: F841 local variable 'e' is assigned to but never used\n./api/volcanoes_api.py:140:80: E501 line too long (96 > 79 characters)\n./api/volcanoes_api.py:143:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:146:43: E225 missing whitespace around operator\n./api/volcanoes_api.py:146:72: E231 missing whitespace after ','\n./api/volcanoes_api.py:148:72: E231 missing whitespace after ','\n./api/volcanoes_api.py:149:53: E231 missing whitespace after ','\n./api/volcanoes_api.py:152:53: E231 missing whitespace after ','\n./api/volcanoes_api.py:154:36: E225 missing whitespace around operator\n./api/volcanoes_api.py:155:36: E225 missing whitespace around operator\n./api/volcanoes_api.py:155:80: E501 line too long (119 > 79 characters)\n./api/volcanoes_api.py:156:37: E225 missing whitespace around operator\n./api/volcanoes_api.py:157:36: E225 missing whitespace around operator\n./api/volcanoes_api.py:157:57: W291 trailing whitespace\n./api/volcanoes_api.py:158:34: E225 missing whitespace around operator\n./api/volcanoes_api.py:159:42: E225 missing whitespace around operator\n./api/volcanoes_api.py:160:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:162:44: E225 missing whitespace around operator\n./api/volcanoes_api.py:163:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:165:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:165:62: E231 missing whitespace after ','\n./api/volcanoes_api.py:166:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:168:49: E225 missing whitespace around operator\n./api/volcanoes_api.py:168:80: E501 line too long (196 > 79 characters)\n./api/volcanoes_api.py:168:180: E231 missing whitespace after ','\n./api/volcanoes_api.py:169:56: E231 missing whitespace after ','\n./api/volcanoes_api.py:170:50: E225 missing whitespace around operator\n./api/volcanoes_api.py:171:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:172:80: E501 line too long (115 > 79 characters)\n./api/volcanoes_api.py:173:58: E225 missing whitespace around operator\n./api/volcanoes_api.py:173:80: E501 line too long (122 > 79 characters)\n./api/volcanoes_api.py:173:88: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:94: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:101: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:108: E231 missing whitespace after ','\n./api/volcanoes_api.py:173:115: E231 missing whitespace after ','\n./api/volcanoes_api.py:174:80: E501 line too long (196 > 79 characters)\n./api/volcanoes_api.py:174:190: E231 missing whitespace after ','\n./api/volcanoes_api.py:175:67: E231 missing whitespace after ','\n./api/volcanoes_api.py:176:59: E231 missing whitespace after ','\n./api/volcanoes_api.py:176:69: E231 missing whitespace after ','\n./api/volcanoes_api.py:177:55: E225 missing whitespace around operator\n./api/volcanoes_api.py:177:80: E501 line too long (90 > 79 characters)\n./api/volcanoes_api.py:177:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:179:80: E501 line too long (87 > 79 characters)\n./api/volcanoes_api.py:179:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:180:57: E225 missing whitespace around operator\n./api/volcanoes_api.py:181:60: E225 missing whitespace around operator\n./api/volcanoes_api.py:182:61: E225 missing whitespace around operator\n./api/volcanoes_api.py:183:64: E231 missing whitespace after ','\n./api/volcanoes_api.py:185:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:186:65: E231 missing whitespace after ','\n./api/volcanoes_api.py:188:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:189:61: E231 missing whitespace after ','\n./api/volcanoes_api.py:191:80: E501 line too long (85 > 79 characters)\n./api/volcanoes_api.py:192:57: E231 missing whitespace after ','\n./api/volcanoes_api.py:193:37: F841 local variable 'e' is assigned to but never used\n./api/volcanoes_api.py:194:80: E501 line too long (92 > 79 characters)\n./api/volcanoes_api.py:196:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:198:80: E501 line too long (86 > 79 characters)\n./api/volcanoes_api.py:199:49: E231 missing whitespace after ','\n./api/volcanoes_api.py:201:32: E225 missing whitespace around operator\n./api/volcanoes_api.py:202:32: E225 missing whitespace around operator\n./api/volcanoes_api.py:202:80: E501 line too long (115 > 79 characters)\n./api/volcanoes_api.py:203:33: E225 missing whitespace around operator\n./api/volcanoes_api.py:204:32: E225 missing whitespace around operator\n./api/volcanoes_api.py:204:53: W291 trailing whitespace\n./api/volcanoes_api.py:205:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:206:38: E225 missing whitespace around operator\n./api/volcanoes_api.py:207:37: E225 missing whitespace around operator\n./api/volcanoes_api.py:209:40: E225 missing whitespace around operator\n./api/volcanoes_api.py:210:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:212:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:212:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:213:41: E225 missing whitespace around operator\n./api/volcanoes_api.py:215:45: E225 missing whitespace around operator\n./api/volcanoes_api.py:215:80: E501 line too long (192 > 79 characters)\n./api/volcanoes_api.py:215:176: E231 missing whitespace after ','\n./api/volcanoes_api.py:216:52: E231 missing whitespace after ','\n./api/volcanoes_api.py:217:46: E225 missing whitespace around operator\n./api/volcanoes_api.py:218:54: E231 missing whitespace after ','\n./api/volcanoes_api.py:219:80: E501 line too long (111 > 79 characters)\n./api/volcanoes_api.py:220:45: F841 local variable 'meteo_inp' is assigned to but never used\n./api/volcanoes_api.py:220:54: E225 missing whitespace around operator\n./api/volcanoes_api.py:220:80: E501 line too long (118 > 79 characters)\n./api/volcanoes_api.py:220:84: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:90: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:97: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:104: E231 missing whitespace after ','\n./api/volcanoes_api.py:220:111: E231 missing whitespace after ','\n./api/volcanoes_api.py:221:80: E501 line too long (192 > 79 characters)\n./api/volcanoes_api.py:221:186: E231 missing whitespace after ','\n./api/volcanoes_api.py:222:63: E231 missing whitespace after ','\n./api/volcanoes_api.py:223:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:223:65: E231 missing whitespace after ','\n./api/volcanoes_api.py:224:51: E225 missing whitespace around operator\n./api/volcanoes_api.py:224:80: E501 line too long (86 > 79 characters)\n./api/volcanoes_api.py:224:80: E231 missing whitespace after ','\n./api/volcanoes_api.py:226:80: E501 line too long (83 > 79 characters)\n./api/volcanoes_api.py:226:80: E231 missing whitespace after ','\n./api/volcanoes_api.py:227:53: E225 missing whitespace around operator\n./api/volcanoes_api.py:228:56: E225 missing whitespace around operator\n./api/volcanoes_api.py:229:57: E225 missing whitespace around operator\n./api/volcanoes_api.py:230:60: E231 missing whitespace after ','\n./api/volcanoes_api.py:232:80: E501 line too long (85 > 79 characters)\n./api/volcanoes_api.py:233:61: E231 missing whitespace after ','\n./api/volcanoes_api.py:235:80: E501 line too long (85 > 79 characters)\n./api/volcanoes_api.py:236:57: E231 missing whitespace after ','\n./api/volcanoes_api.py:238:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:239:53: E231 missing whitespace after ','\n./api/volcanoes_api.py:240:33: F841 local variable 'e' is assigned to but never used\n./api/volcanoes_api.py:241:80: E501 line too long (88 > 79 characters)\n./api/volcanoes_api.py:243:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:245:80: E501 line too long (82 > 79 characters)\n./api/volcanoes_api.py:246:45: E231 missing whitespace after ','\n./api/volcanoes_api.py:248:48: W291 trailing whitespace\n./api/volcanoes_api.py:249:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:251:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:251:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:253:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:254:30: E231 missing whitespace after ','\n./api/volcanoes_api.py:254:35: E231 missing whitespace after ','\n./api/volcanoes_api.py:255:14: E225 missing whitespace around operator\n./api/volcanoes_api.py:257:22: E211 whitespace before '('\n./api/volcanoes_api.py:257:29: E231 missing whitespace after ','\n./api/volcanoes_api.py:258:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:259:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:260:35: E231 missing whitespace after ':'\n./api/volcanoes_api.py:261:36: E231 missing whitespace after ':'\n./api/volcanoes_api.py:264:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:265:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:267:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:267:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:270:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:270:28: E231 missing whitespace after ','\n./api/volcanoes_api.py:270:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:273:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:274:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:275:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:275:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:275:80: E501 line too long (101 > 79 characters)\n./api/volcanoes_api.py:275:93: E231 missing whitespace after ','\n./api/volcanoes_api.py:277:46: W291 trailing whitespace\n./api/volcanoes_api.py:280:23: E225 missing whitespace around operator\n./api/volcanoes_api.py:280:56: E231 missing whitespace after ','\n./api/volcanoes_api.py:282:31: E225 missing whitespace around operator\n./api/volcanoes_api.py:287:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:287:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:288:18: W291 trailing whitespace\n./api/volcanoes_api.py:289:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:290:28: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:33: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:38: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:45: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:52: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:59: E231 missing whitespace after ','\n./api/volcanoes_api.py:290:66: E231 missing whitespace after ','\n./api/volcanoes_api.py:291:19: E231 missing whitespace after ','\n./api/volcanoes_api.py:293:22: E211 whitespace before '('\n./api/volcanoes_api.py:294:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:295:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:297:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:298:67: E231 missing whitespace after ','\n./api/volcanoes_api.py:299:72: E231 missing whitespace after ','\n./api/volcanoes_api.py:300:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:300:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:300:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:300:80: E501 line too long (96 > 79 characters)\n./api/volcanoes_api.py:302:46: W291 trailing whitespace\n./api/volcanoes_api.py:306:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:306:83: E231 missing whitespace after ','\n./api/volcanoes_api.py:308:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:308:49: E231 missing whitespace after ','\n./api/volcanoes_api.py:308:80: E501 line too long (103 > 79 characters)\n./api/volcanoes_api.py:309:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:309:42: E231 missing whitespace after ','\n./api/volcanoes_api.py:309:80: E501 line too long (83 > 79 characters)\n./api/volcanoes_api.py:310:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:310:48: E231 missing whitespace after ','\n./api/volcanoes_api.py:310:80: E501 line too long (93 > 79 characters)\n./api/volcanoes_api.py:311:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:311:47: E231 missing whitespace after ','\n./api/volcanoes_api.py:311:80: E501 line too long (106 > 79 characters)\n./api/volcanoes_api.py:311:93: E231 missing whitespace after ','\n./api/volcanoes_api.py:312:17: E225 missing whitespace around operator\n./api/volcanoes_api.py:312:47: E231 missing whitespace after ','\n./api/volcanoes_api.py:312:80: E501 line too long (105 > 79 characters)\n./api/volcanoes_api.py:312:92: E231 missing whitespace after ','\n./api/volcanoes_api.py:313:20: E225 missing whitespace around operator\n./api/volcanoes_api.py:313:43: E231 missing whitespace after ','\n./api/volcanoes_api.py:314:22: E211 whitespace before '('\n./api/volcanoes_api.py:314:31: E231 missing whitespace after ','\n./api/volcanoes_api.py:317:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:317:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:319:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:319:23: E231 missing whitespace after ','\n./api/volcanoes_api.py:320:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:322:22: E211 whitespace before '('\n./api/volcanoes_api.py:323:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:324:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:325:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:327:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:327:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:330:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:330:26: E231 missing whitespace after ','\n./api/volcanoes_api.py:330:31: E231 missing whitespace after ','\n./api/volcanoes_api.py:332:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:334:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:335:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:336:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:336:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:336:80: E501 line too long (95 > 79 characters)\n./api/volcanoes_api.py:339:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:341:11: E111 indentation is not a multiple of 4\n./api/volcanoes_api.py:341:73: E231 missing whitespace after ','\n./api/volcanoes_api.py:341:80: W291 trailing whitespace\n./api/volcanoes_api.py:342:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:342:17: E231 missing whitespace after ','\n./api/volcanoes_api.py:342:22: E231 missing whitespace after ','\n./api/volcanoes_api.py:342:27: E231 missing whitespace after ','\n./api/volcanoes_api.py:344:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:346:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:347:15: E225 missing whitespace around operator\n./api/volcanoes_api.py:347:39: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:22: E225 missing whitespace around operator\n./api/volcanoes_api.py:348:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:58: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:80: E501 line too long (108 > 79 characters)\n./api/volcanoes_api.py:348:96: E231 missing whitespace after ','\n./api/volcanoes_api.py:348:109: W291 trailing whitespace\n./api/volcanoes_api.py:349:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:349:63: E231 missing whitespace after ','\n./api/volcanoes_api.py:349:80: W291 trailing whitespace\n./api/volcanoes_api.py:351:26: E225 missing whitespace around operator\n./api/volcanoes_api.py:351:59: E231 missing whitespace after ','\n./api/volcanoes_api.py:351:62: E231 missing whitespace after ','\n./api/volcanoes_api.py:351:80: E501 line too long (100 > 79 characters)\n./api/volcanoes_api.py:352:13: E265 block comment should start with '# '\n./api/volcanoes_api.py:353:13: E265 block comment should start with '# '\n./api/volcanoes_api.py:354:19: E225 missing whitespace around operator\n./api/volcanoes_api.py:355:24: E225 missing whitespace around operator\n./api/volcanoes_api.py:355:48: E231 missing whitespace after ','\n./api/volcanoes_api.py:355:51: E231 missing whitespace after ','\n./api/volcanoes_api.py:355:80: E501 line too long (89 > 79 characters)\n./api/volcanoes_api.py:356:15: E225 missing whitespace around operator\n./api/volcanoes_api.py:356:36: E231 missing whitespace after ','\n./api/volcanoes_api.py:359:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:359:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:361:5: E301 expected 1 blank line, found 0\n./api/volcanoes_api.py:362:14: E225 missing whitespace around operator\n./api/volcanoes_api.py:364:22: E211 whitespace before '('\n./api/volcanoes_api.py:365:21: E225 missing whitespace around operator\n./api/volcanoes_api.py:366:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:367:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:369:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:369:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:372:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:373:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:374:5: E303 too many blank lines (2)\n./api/volcanoes_api.py:374:24: E231 missing whitespace after ','\n./api/volcanoes_api.py:375:12: E225 missing whitespace around operator\n./api/volcanoes_api.py:375:15: E231 missing whitespace after ','\n./api/volcanoes_api.py:375:17: E231 missing whitespace after ','\n./api/volcanoes_api.py:375:20: E231 missing whitespace after ','\n./api/volcanoes_api.py:376:18: E225 missing whitespace around operator\n./api/volcanoes_api.py:378:20: E225 missing whitespace around operator\n./api/volcanoes_api.py:389:5: E265 block comment should start with '# '\n./api/volcanoes_api.py:389:18: W291 trailing whitespace\n./api/volcanoes_api.py:390:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:396:16: E225 missing whitespace around operator\n./api/volcanoes_api.py:396:55: E231 missing whitespace after ','\n./api/volcanoes_api.py:401:75: E231 missing whitespace after ','\n./api/volcanoes_api.py:401:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:406:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:407:26: E231 missing whitespace after ','\n./api/volcanoes_api.py:409:80: E501 line too long (91 > 79 characters)\n./api/volcanoes_api.py:419:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:423:80: E501 line too long (81 > 79 characters)\n./api/volcanoes_api.py:428:80: E501 line too long (103 > 79 characters)\n./api/volcanoes_api.py:429:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:430:30: E225 missing whitespace around operator\n./api/volcanoes_api.py:433:80: E501 line too long (141 > 79 characters)\n./api/volcanoes_api.py:433:135: E231 missing whitespace after ','\n./api/volcanoes_api.py:437:80: E501 line too long (182 > 79 characters)\n./api/volcanoes_api.py:437:176: E231 missing whitespace after ','\n./api/volcanoes_api.py:439:1: W293 blank line contains whitespace\n./api/volcanoes_api.py:439:12: W292 no newline at end of file\n./api/__init__.py:1:8: E225 missing whitespace around operator\n./api/__init__.py:2:9: E225 missing whitespace around operator\n./api/__init__.py:3:11: E225 missing whitespace around operator\n./api/__init__.py:4:12: E225 missing whitespace around operator\n./api/__init__.py:4:15: W292 no newline at end of file"
+                        },
+                        {
+                            "valid": true,
+                            "message": "JSON files are compliant with jsonlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "jsonlint",
+                                "lang": "JSON",
+                                "version": "1.6.3",
+                                "docker": {
+                                    "dockerfile": "QC.Sty/jsonlint/Dockerfile",
+                                    "reviewed": "2021-11-23"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener jsonlint",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "jsonlint-cli \"**/*.json\""
+                                    ],
+                                    "stdout_text": "",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/97/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Uni": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Uni01": {
+                    "description": "Are the tests passing through an automated means?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the failing test cases found by the {tool_name} tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Test cases are not passing using None testing framework",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
+                                },
+                                "ci": {
+                                    "name": "QC.Uni gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener pytest",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "pytest  --json-report  --json-report-indent 4"
+                                    ],
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items\n\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n============================ no tests ran in 0.02s =============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Ver": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Ver01.0": {
+                    "description": "Are tags being used for releasing software",
+                    "requirement_level": "MUST",
+                    "hint": "Git tags are a convenient way to release software. This subcriterion checks if any git tag is present in the code history. More info on it-scm.com/book/en/v2/Git-Basics-Tagging\" target=\"_blank\">git tagging</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "The code repository does not use tags for releasing new software versions",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": []
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver01": {
+                    "description": "Is the latest release compliant with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Latest tag must be compliant with <a href=\"https://semver.org\" target=\"_blank\">SemVer specification</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Latest release tag None found, but is not SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": []
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver02": {
+                    "description": "Are all release tags with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Existent release tags shall be <a href=\"https://semver.org\" target=\"_blank\">SemVer</a> compliant for this subcriterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "All release tags are SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-listener.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-listener.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": []
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 33,
+                "total_subcriteria": 3,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Met": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Met01": {
+                    "description": "Is the software citable?",
+                    "valid": false,
+                    "hint": "The two formats for software citation supported by SQAaaS are: 1) <a href=\"https://codemeta.github.io/\" target=\"_blank\">CodeMeta</a> and 2) <a href=\"https://citation-file-format.github.io/\" target=\"_blank\">Citation File Format (CFF)</a>. While CodeMeta provides you with a more comprehensive description, CFF is a more lightweight, good-enough approach to software (with built-in support by GitHub) citation. Both provide tools (<a href=\"https://codemeta.github.io/codemeta-generator/\" target=\"_blank\">CodeMeta generator</a>, <a href=\"https://citation-file-format.github.io/cff-initializer-javascript/#/\" target=\"_blank\">CFFINIT</a>)to easily generate a working citation file. Once having the file, be sure to add it to the root path of your code repo.",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "No matching files found for language <CodeMeta> in repository searching by extensions or filenames\nNo matching files found for language <Citation File Format> in repository searching by extensions or filenames"
+                        }
+                    ],
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        }
+    },
+    "badge": {
+        "software": {
+            "criteria": {
+                "bronze": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Lic"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                },
+                "silver": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Ver",
+                        "QC.Met",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Ver",
+                        "QC.Met",
+                        "QC.Doc",
+                        "QC.Lic"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                },
+                "gold": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Ver",
+                        "QC.Met",
+                        "QC.Acc",
+                        "QC.Lic",
+                        "QC.Uni",
+                        "QC.Sty",
+                        "QC.Sec"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Ver",
+                        "QC.Met",
+                        "QC.Lic",
+                        "QC.Uni",
+                        "QC.Sty",
+                        "QC.Sec"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                }
+            },
+            "data": {}
+        }
+    }
+}
