@@ -1,0 +1,68 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener:
+      branch: main
+      repo: https://gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener git:
+        commands:
+        - /usr/bin/env sh .sqa/script.muggy-coral-bandicoot.sh
+        container: qc.acc_squeaky-azure-heron
+  QC.Doc:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.thirsty-mauve-snail.sh
+        container: qc.doc_ready-cornflower-chinook
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener git:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-amber-bobcat.sh
+        container: qc.doc_leaky-ivory-cattle
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.lousy-firebrick-grouse.sh
+        container: qc.doc_gamy-amber-fossa
+  QC.Lic:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.silly-purple-bloodhound.sh
+        container: qc.lic_shaggy-tangerine-bonobo
+  QC.Sec:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-mustard-grouse.sh
+        container: qc.sec_squeaky-tomato-paradise
+  QC.Sty:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaky-copper-walrus.sh
+        container: qc.sty_hazy-asparagus-badger
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-asparagus-tarsier.sh
+        container: qc.sty_skanky-platinum-slug
+  QC.Uni:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.hasty-cyan-rhinoceros.sh
+        container: qc.uni_muzzy-plum-cassowary
+  QC.Ver:
+    repos:
+      gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-listener get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.squirrely-pear-oriole.sh
+        container: qc.ver_squirrely-amethyst-cow
+timeout: 5400
